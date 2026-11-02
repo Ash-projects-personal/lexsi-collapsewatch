@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "gate_template_share": 0.1,
+  "dolly_rows": 15011,
+  "curatorkit_outputs": [
+    "/home/hatch/workspace/hackathons/lexsi-collapsewatch/curator_out/eval/sft_alpaca.jsonl",
+    "/home/hatch/workspace/hackathons/lexsi-collapsewatch/curator_out/rejected.jsonl",
+    "/home/hatch/workspace/hackathons/lexsi-collapsewatch/curator_out/train/sft_alpaca.jsonl"
+  ],
+  "curatorkit_curated_rows": 13231,
+  "gate_stats": {
+    "input_rows": 13231,
+    "dropped_exact_duplicates": 0,
+    "dropped_near_duplicates": 6,
+    "dropped_template_cap": 0,
+    "max_template_share": 0.1,
+    "template_cap_rows": 1322,
+    "output_rows": 13225
+  },
+  "finetune_budget": 5000,
+  "finetune_raw_rows": 5000,
+  "finetune_gated_rows": 5000
+}

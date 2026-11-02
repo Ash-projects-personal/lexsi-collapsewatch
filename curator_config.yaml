@@ -1,0 +1,36 @@
+# CuratorKIT pipeline config for CollapseWatch regrounded (Lexsi Track A).
+# Stage 1 of the chain: CuratorKIT curates the local dolly-15k slice.
+# Stage 2 (CollapseWatch gate) runs in curator_pipeline.py, not here:
+#   CuratorKIT dedups; CollapseWatch measures collapse risk and gates on it.
+# Reads the LOCAL dolly JSONL produced by curator_pipeline.py (no Hub access
+# on this machine). Field names follow the alpaca reader format.
+
+name: collapsewatch_curator_stage
+version: "0.2.0"
+
+readers:
+  - type: jsonl
+    path: ./dolly_raw.jsonl
+    format: alpaca
+
+gates:
+  - type: schema
+    required_fields: ["instruction", "output"]
+    min_tokens: 10
+    max_tokens: 2048
+
+normalizers:
+  - type: exact_dedup
+  - type: minhash_dedup
+    minhash_threshold: 0.85
+    minhash_ngram: 3
+    minhash_num_perm: 128
+    minhash_seed: 42
+
+exporters:
+  - type: alpaca
+
+output_split:
+  train: 0.9
+  eval: 0.1
+output_split_seed: 42

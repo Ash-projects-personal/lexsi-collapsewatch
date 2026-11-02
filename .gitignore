@@ -1,0 +1,12 @@
+# Large curated datasets go to Hugging Face (see SUBMISSION_CHECKLIST.md),
+# never to GitHub. Kept out of the repo on purpose.
+dolly_raw.jsonl
+dolly_gated.jsonl
+finetune_raw_5k.jsonl
+finetune_gated_5k.jsonl
+curator_out/train/
+curator_out/eval/
+curator_out/rejected.jsonl
+__pycache__/
+*.pyc
+.venv/

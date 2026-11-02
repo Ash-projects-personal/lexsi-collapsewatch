@@ -1,0 +1,77 @@
+# AlignTune SFT recipe — RAW slice run (Lexsi Track A, CollapseWatch regrounded).
+# The gated run (aligntune_sft_gated.yaml) is byte-identical to this file
+# except: dataset name, run_name, and output_dir. Same model, same recipe,
+# same budget — the only difference the experiment measures is the
+# CollapseWatch gate. Do not change one without changing the other.
+# Model id CohereLabs/tiny-aya-base verified via the CohereLabs org listing
+# (Tiny Aya: Bridging Scale and Multilingual Depth, 3B, text generation).
+
+model:
+  name_or_path: "CohereLabs/tiny-aya-base"
+  backend: unsloth
+  precision: bf16
+  quantization:
+    load_in_4bit: false
+  gradient_checkpointing: true
+  max_seq_length: 512
+  use_unsloth: true
+  peft_enabled: true
+  lora_rank: 32
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+
+dataset:
+  name: "<HF_USER>/lexsi-collapsewatch-dolly-raw-5k"
+  split: "train"
+  max_samples: 5000
+  task_type: sft
+  column_mapping:
+    instruction: "prompt"
+    response: "response"
+  instruction_column: "prompt"
+  response_column: "response"
+  system_prompt: "You are a helpful assistant. Answer the instruction directly and concisely."
+
+train:
+  epochs: 1
+  max_steps: 160
+  per_device_batch_size: 4
+  gradient_accumulation_steps: 8
+  learning_rate: 1e-4
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+  save_interval: 40
+  eval_interval: 80
+  bf16: true
+  seed: 42
+
+evaluation:
+  enabled: true
+  pre_training: true
+  post_training: true
+  eval_dataset:
+    name: "<HF_USER>/lexsi-collapsewatch-dolly-raw-5k"
+    split: "train[4500:5000]"
+    max_samples: 500
+    column_mapping:
+      instruction: "prompt"
+      response: "response"
+  metrics:
+    - type: perplexity
+      name: "perplexity"
+    - type: rouge
+      name: "rouge"
+    - type: bleu
+      name: "bleu"
+
+logging:
+  output_dir: "output/collapsewatch_raw"
+  run_name: "collapsewatch_raw_tinyaya"
+  loggers: ["tensorboard"]
+  log_level: "INFO"
+  log_interval: 10
+  save_strategy: "steps"
+  eval_strategy: "steps"
+
+chat_template: auto

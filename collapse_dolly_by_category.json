@@ -1,0 +1,506 @@
+{
+  "brainstorming": {
+    "rows": 1766,
+    "exact_dup_rows": 0,
+    "exact_dup_rate": 0.0,
+    "near_dup_rows": 0,
+    "near_dup_rate": 0.0,
+    "template_clusters": 982,
+    "top1_template_share": 0.14,
+    "top3_template_share": 0.199,
+    "vocab_top50_coverage": 0.355,
+    "type_token_ratio": 0.141,
+    "length_modal_share": 0.181,
+    "length_modal_bucket_tokens": "10-19",
+    "answer_repetition": 0.002,
+    "response_length": {
+      "mean": 58.0,
+      "median": 36.0,
+      "min": 1,
+      "max": 1145
+    },
+    "worst_templates": [
+      {
+        "template": "give me a list",
+        "rows": 247,
+        "share": 0.14,
+        "distinct_answers": 247,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Give me a list of some characteristics of a good coffee shop?"
+      },
+      {
+        "template": "give me a bulleted",
+        "rows": 72,
+        "share": 0.041,
+        "distinct_answers": 72,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Give me a bulleted list of the 5 highest mountains in the world and their respective heights in meters"
+      },
+      {
+        "template": "what is the best",
+        "rows": 33,
+        "share": 0.019,
+        "distinct_answers": 33,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What is the best tv series in the world"
+      },
+      {
+        "template": "what are the best",
+        "rows": 29,
+        "share": 0.016,
+        "distinct_answers": 29,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What are the best social media sites"
+      },
+      {
+        "template": "what are some good",
+        "rows": 27,
+        "share": 0.015,
+        "distinct_answers": 27,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What are some good body weight exercises for core and abs?"
+      }
+    ]
+  },
+  "classification": {
+    "rows": 2136,
+    "exact_dup_rows": 0,
+    "exact_dup_rate": 0.0,
+    "near_dup_rows": 4,
+    "near_dup_rate": 0.002,
+    "template_clusters": 637,
+    "top1_template_share": 0.13,
+    "top3_template_share": 0.3,
+    "vocab_top50_coverage": 0.306,
+    "type_token_ratio": 0.22,
+    "length_modal_share": 0.391,
+    "length_modal_bucket_tokens": "0-9",
+    "answer_repetition": 0.0,
+    "response_length": {
+      "mean": 22.6,
+      "median": 13.0,
+      "min": 1,
+      "max": 570
+    },
+    "worst_templates": [
+      {
+        "template": "identify which instrument is",
+        "rows": 277,
+        "share": 0.13,
+        "distinct_answers": 277,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Identify which instrument is string or percussion: Cantaro, Gudok"
+      },
+      {
+        "template": "classify each of the",
+        "rows": 226,
+        "share": 0.106,
+        "distinct_answers": 226,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Classify each of the following as a primary color or a secondary color"
+      },
+      {
+        "template": "tell me whether these",
+        "rows": 137,
+        "share": 0.064,
+        "distinct_answers": 137,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Tell me whether these people are DJs or singers: David Guetta, Avicii, Rihanna, Beyonce, Martin Garrix, Calvin Harris, Taylor Swift"
+      },
+      {
+        "template": "which of the following",
+        "rows": 130,
+        "share": 0.061,
+        "distinct_answers": 130,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Which of the following is useful for transportation: a glass of wine, a lamp, a train, an iced cube tray, a plane, a bicycle, an apple and a scooter."
+      },
+      {
+        "template": "which is a species",
+        "rows": 95,
+        "share": 0.044,
+        "distinct_answers": 95,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Which is a species of fish? Tope or Rope"
+      }
+    ]
+  },
+  "closed_qa": {
+    "rows": 1773,
+    "exact_dup_rows": 4,
+    "exact_dup_rate": 0.002,
+    "near_dup_rows": 8,
+    "near_dup_rate": 0.005,
+    "template_clusters": 1034,
+    "top1_template_share": 0.107,
+    "top3_template_share": 0.231,
+    "vocab_top50_coverage": 0.365,
+    "type_token_ratio": 0.202,
+    "length_modal_share": 0.332,
+    "length_modal_bucket_tokens": "10-19",
+    "answer_repetition": 0.002,
+    "response_length": {
+      "mean": 31.4,
+      "median": 18,
+      "min": 1,
+      "max": 642
+    },
+    "worst_templates": [
+      {
+        "template": "given this paragraph about",
+        "rows": 190,
+        "share": 0.107,
+        "distinct_answers": 190,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Given this paragraph about Billie Eilish, tell me who produced her debut single, also tell me what is her chart-topping single?\n\nBillie Eilish Pirate Baird O'Connell (/ˈaɪlɪʃ/ EYE-lish; born December 18, 2001) is an American singer and songwriter. She first gained public attention in 2015 with her debut single \"Ocean Eyes\", written and produced by her brother Finneas O'Connell, with whom she collaborates on music and live shows. In 2017, she released her debut extended play (EP), titled Don't Smile at Me. Commercially successful, it reached the top 15 of record charts in numerous countries, including the US, UK, Canada, and Australia.\n\nEilish's first studio album, When We All Fall Asleep, Where Do We Go? (2019), debuted atop the US Billboard 200 and UK Albums Chart. It was one of the best-selling albums of the year, buoyed by the success of its fifth single \"Bad Guy\", Eilish's first number-one on the US Billboard Hot 100. This made her the first artist born in the 21st century to release a chart-topping single. The following year, Eilish performed the theme song \"No Time to Die\" for the James Bond film of the same name, which topped the UK Singles Chart and won the Academy Award for Best Original Song in 2022. Her subsequent singles \"Everything I Wanted\", \"My Future\", \"Therefore I Am\", and \"Your Power\" peaked in the top 10 in the US and UK. Her second studio album, Happier Than Ever (2021), topped charts in 25 countries."
+      },
+      {
+        "template": "given a reference text",
+        "rows": 184,
+        "share": 0.104,
+        "distinct_answers": 184,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Given a reference text about Lollapalooza, where does it take place, who started it and what is it?\n\nLollapalooza /ˌlɒləpəˈluːzə/ (Lolla) is an annual American four-day music festival held in Grant Park in Chicago. It originally started as a touring event in 1991, but several years later, Chicago became its permanent location. Music genres include but are not limited to alternative rock, heavy metal, punk rock, hip hop, and electronic dance music. Lollapalooza has also featured visual arts, nonprofit organizations, and political organizations. The festival, held in Grant Park, hosts an estimated 400,000 people each July and sells out annually. Lollapalooza is one of the largest and most iconic music festivals in the world and one of the longest-running in the United States.\n\nLollapalooza was conceived and created in 1991 as a farewell tour by Perry Farrell, singer of the group Jane's Addiction."
+      },
+      {
+        "template": "given the reference text",
+        "rows": 36,
+        "share": 0.02,
+        "distinct_answers": 36,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Given the reference text about the Cy Young Award, please describe what the award is and why it is awarded.\n\nThe Cy Young Award is given annually to the best pitchers in Major League Baseball (MLB), one each for the American League (AL) and National League (NL). The award was first introduced in 1956 by Baseball Commissioner Ford Frick in honor of Hall of Fame pitcher Cy Young, who died in 1955. The award was originally given to the single best pitcher in the major leagues, but in 1967, after the retirement of Frick, the award was given to one pitcher in each league."
+      },
+      {
+        "template": "given these paragraphs about",
+        "rows": 36,
+        "share": 0.02,
+        "distinct_answers": 36,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Given these paragraphs about Large language models, when was the first model in OpenAI's GPT series trained?\n\nA large language model (LLM) is a language model consisting of a neural network with many parameters (typically billions of weights or more), trained on large quantities of unlabelled text using self-supervised learning. LLMs emerged around 2018 and perform well at a wide variety of tasks. This has shifted the focus of natural language processing research away from the previous paradigm of training specialized supervised models for specific tasks.\n\nProperties\nThough the term large language model has no formal definition, it often refers to deep learning models having a parameter count on the order of billions or more. LLMs are general purpose models which excel at a wide range of tasks, as opposed to being trained for one specific task (such as sentiment analysis, named entity recognition, or mathematical reasoning). The skill with which they accomplish tasks, and the range of tasks at which they are capable, seems to be a function of the amount of resources (data, parameter-size, computing power) devoted to them, in a way that is not dependent on additional breakthroughs in design.\n\nThough trained on simple tasks along the lines of predicting the next word in a sentence, neural language models with sufficient training and parameter counts are found to capture much of the syntax and semantics of human language. In addition, large language models demonstrate considerable general knowledge about the world, and are able to \"memorize\" a great quantity of facts during training.\n\nHallucinations\nMain article: Hallucination (artificial intelligence)\nIn artificial intelligence in general, and in large language models in particular, a \"hallucination\" is a confident response that does not seem to be justified by the model's training data.\n\nEmergent abilities\n\nOn a number of natural language benchmarks involving tasks such as question answering, models perform no better than random chance until they reach a certain scale (in this case, measured by training computation), at which point their performance sharply increases. These are examples of emergent abilities.\nUnpredictable abilities that have been observed in large language models but that were not present in simpler models (and that were not explicitly designed into the model) are usually called \"emergent abilities\". Researchers note that such abilities \"cannot be predicted simply by extrapolating the performance of smaller models\". These abilities are discovered rather than programmed-in or designed, in some cases only after the LLM has been publicly deployed. Hundreds of emergent abilities have been described. Examples include multi-step arithmetic, taking college-level exams, identifying the intended meaning of a word, chain-of-thought prompting, decoding the International Phonetic Alphabet, unscrambling a word’s letters, identifying offensive content in paragraphs of Hinglish (a combination of Hindi and English), and generating a similar English equivalent of Kiswahili proverbs.\n\nArchitecture and training\nLarge language models have most commonly used the transformer architecture, which, since 2018, has become the standard deep learning technique for sequential data (previously, recurrent architectures such as the LSTM were most common). LLMs are trained in an unsupervised manner on unannotated text. A left-to-right transformer is trained to maximize the probability assigned to the next word in the training data, given the previous context. Alternatively, an LLM may use a bidirectional transformer (as in the example of BERT), which assigns a probability distribution over words given access to both preceding and following context. In addition to the task of predicting the next word or \"filling in the blanks\", LLMs may be trained on auxiliary tasks which test their understanding of the data distribution such as Next Sentence Prediction (NSP), in which pairs of sentences are presented and the model must predict whether they appear side-by-side in the training corpus.\n\nThe earliest LLMs were trained on corpora having on the order of billions of words. The first model in OpenAI's GPT series was trained in 2018 on BookCorpus, consisting of 985 million words. In the same year, BERT was trained on a combination of BookCorpus and English Wikipedia, totalling 3.3 billion words. In the years since then, training corpora for LLMs have increased by orders of magnitude, reaching up to hundreds of billions or trillions of tokens.\n\nLLMs are computationally expensive to train. A 2020 study estimated the cost of training a 1.5 billion parameter model (1-2 orders of magnitude smaller than the state of the art at the time) at $1.6 million.\n\nA 2020 analysis found that neural language models' capability (as measured by training loss) increased smoothly in a power law relationship with number of parameters, quantity of training data, and computation used for training. These relationships were tested over a wide range of values (up to seven orders of magnitude) and no attenuation of the relationship was observed at the highest end of the range (including for network sizes up to trillions of parameters).\n\nApplication to downstream tasks\nBetween 2018 and 2020, the standard method for harnessing an LLM for a specific natural language processing (NLP) task was to fine tune the model with additional task-specific training. It has subsequently been found that more powerful LLMs such as GPT-3 can solve tasks without additional training via \"prompting\" techniques, in which the problem to be solved is presented to the model as a text prompt, possibly with some textual examples of similar problems and their solutions.\n\nFine-tuning\nMain article: Fine-tuning (machine learning)\nFine-tuning is the practice of modifying an existing pretrained language model by training it (in a supervised fashion) on a specific task (e.g. sentiment analysis, named entity recognition, or part-of-speech tagging). It is a form of transfer learning. It generally involves the introduction of a new set of weights connecting the final layer of the language model to the output of the downstream task. The original weights of the language model may be \"frozen\", such that only the new layer of weights connecting them to the output are learned during training. Alternatively, the original weights may receive small updates (possibly with earlier layers frozen).\n\nPrompting\nSee also: Prompt engineering and Few-shot learning (natural language processing)\nIn the prompting paradigm, popularized by GPT-3, the problem to be solved is formulated via a text prompt, which the model must solve by providing a completion (via inference). In \"few-shot prompting\", the prompt includes a small number of examples of similar (problem, solution) pairs. For example, a sentiment analysis task of labelling the sentiment of a movie review could be prompted as follows:\n\nReview: This movie stinks.\nSentiment: negative\n\nReview: This movie is fantastic!\nSentiment:\n\nIf the model outputs \"positive\", then it has correctly solved the task. In zero-shot prompting, no solve examples are provided. An example of a zero-shot prompt for the same sentiment analysis task would be \"The sentiment associated with the movie review 'This movie is fantastic!' is\".\n\nFew-shot performance of LLMs has been shown to achieve competitive results on NLP tasks, sometimes surpassing prior state-of-the-art fine-tuning approaches. Examples of such NLP tasks are translation, question answering, cloze tasks, unscrambling words, and using a novel word in a sentence. The creation and optimisation of such prompts is called prompt engineering.\n\nInstruction tuning\nInstruction tuning is a form of fine-tuning designed to facilitate more natural and accurate zero-shot prompting interactions. Given a text input, a pretrained language model will generate a completion which matches the distribution of text on which it was trained. A naive language model given the prompt \"Write an essay about the main themes of Hamlet.\" might provide a completion such as \"A late penalty of 10% per day will be applied to submissions received after March 17.\" In instruction tuning, the language model is trained on many examples of tasks formulated as natural language instructions, along with appropriate responses. Various techniques for instruction tuning have been applied in practice. OpenAI's InstructGPT protocol involves supervised fine-tuning on a dataset of human-generated (prompt, response) pairs, followed by reinforcement learning from human feedback (RLHF), in which a reward function was learned based on a dataset of human preferences. Another technique, \"self-instruct\", fine-tunes the language model on a training set of examples which are themselves generated by an LLM (bootstrapped from a small initial set of human-generated examples).\n\nhttps://en.wikipedia.org/wiki/Large_language_model"
+      },
+      {
+        "template": "given this reference text",
+        "rows": 35,
+        "share": 0.02,
+        "distinct_answers": 35,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Given this reference text about the consumption of peanut butter, when is national peanut butter day?\n\nThe United States is a leading exporter of peanut butter, and one of the largest consumers of peanut butter annually per capita. January 24 is National Peanut Butter Day in the United States. In March 2020 during the COVID-19 pandemic, retail sales of peanut butter in the United States increased by 75% over the level in March 2019.\n\nAccording to Jon Krampner's 2013 book on peanut butter, per capita consumption of peanut butter in Canada and the Netherlands – the largest consumer per capita in Europe – exceed that in the United States.\n\nIn Israel, the peanut-butter-flavored puffcorn snack Bamba accounts for 25% of the snack market; its consumption by infants has been linked to a low incidence of peanut allergies among Israelis."
+      }
+    ]
+  },
+  "creative_writing": {
+    "rows": 709,
+    "exact_dup_rows": 0,
+    "exact_dup_rate": 0.0,
+    "near_dup_rows": 0,
+    "near_dup_rate": 0.0,
+    "template_clusters": 554,
+    "top1_template_share": 0.03,
+    "top3_template_share": 0.065,
+    "vocab_top50_coverage": 0.401,
+    "type_token_ratio": 0.097,
+    "length_modal_share": 0.066,
+    "length_modal_bucket_tokens": "90-99",
+    "answer_repetition": 0.0,
+    "response_length": {
+      "mean": 178.9,
+      "median": 121,
+      "min": 1,
+      "max": 1745
+    },
+    "worst_templates": [
+      {
+        "template": "write a short story",
+        "rows": 21,
+        "share": 0.03,
+        "distinct_answers": 21,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Write a short story about a person who discovers a hidden room in their house. The story should include a plot twist and a clear resolution at the end."
+      },
+      {
+        "template": "what is the best",
+        "rows": 15,
+        "share": 0.021,
+        "distinct_answers": 15,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What is the best way to put a toddler to sleep at night?"
+      },
+      {
+        "template": "write a letter to",
+        "rows": 10,
+        "share": 0.014,
+        "distinct_answers": 10,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Write a letter to my boss that convinces them that I deserve a raise."
+      },
+      {
+        "template": "write an email to",
+        "rows": 10,
+        "share": 0.014,
+        "distinct_answers": 10,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Write an email to someone updating that I’ve accepted the position at their company to which they referred me"
+      },
+      {
+        "template": "write a story about",
+        "rows": 8,
+        "share": 0.011,
+        "distinct_answers": 8,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Write a story about a man who finds a magic lamp that has a genie inside. The genie should grant him wishes and the story should conclude with a tragic ending."
+      }
+    ]
+  },
+  "general_qa": {
+    "rows": 2191,
+    "exact_dup_rows": 1,
+    "exact_dup_rate": 0.0,
+    "near_dup_rows": 7,
+    "near_dup_rate": 0.003,
+    "template_clusters": 1635,
+    "top1_template_share": 0.028,
+    "top3_template_share": 0.059,
+    "vocab_top50_coverage": 0.397,
+    "type_token_ratio": 0.078,
+    "length_modal_share": 0.094,
+    "length_modal_bucket_tokens": "60-69",
+    "answer_repetition": 0.004,
+    "response_length": {
+      "mean": 100.2,
+      "median": 76,
+      "min": 1,
+      "max": 1550
+    },
+    "worst_templates": [
+      {
+        "template": "what is the best",
+        "rows": 62,
+        "share": 0.028,
+        "distinct_answers": 62,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What is the best swimming form?"
+      },
+      {
+        "template": "what is the difference",
+        "rows": 36,
+        "share": 0.016,
+        "distinct_answers": 36,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What is the difference between common law and civil law?"
+      },
+      {
+        "template": "why do people like",
+        "rows": 32,
+        "share": 0.015,
+        "distinct_answers": 32,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Why do people like gardening?"
+      },
+      {
+        "template": "who is the greatest",
+        "rows": 17,
+        "share": 0.008,
+        "distinct_answers": 17,
+        "mean_pairwise_response_similarity": 0.002,
+        "example_prompt": "Who is the greatest tennis player of all time?"
+      },
+      {
+        "template": "what are the benefits",
+        "rows": 14,
+        "share": 0.006,
+        "distinct_answers": 14,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What are the benefits of exercising and why one should workout everyday especially if you have a sedentary lifestyle that makes you sit all day long?"
+      }
+    ]
+  },
+  "information_extraction": {
+    "rows": 1506,
+    "exact_dup_rows": 0,
+    "exact_dup_rate": 0.0,
+    "near_dup_rows": 4,
+    "near_dup_rate": 0.003,
+    "template_clusters": 1044,
+    "top1_template_share": 0.09,
+    "top3_template_share": 0.139,
+    "vocab_top50_coverage": 0.337,
+    "type_token_ratio": 0.184,
+    "length_modal_share": 0.261,
+    "length_modal_bucket_tokens": "10-19",
+    "answer_repetition": 0.001,
+    "response_length": {
+      "mean": 49.9,
+      "median": 19.0,
+      "min": 1,
+      "max": 1363
+    },
+    "worst_templates": [
+      {
+        "template": "from the passage provided",
+        "rows": 136,
+        "share": 0.09,
+        "distinct_answers": 136,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "From the passage provided, extract the state Lincoln was born in\n\nAbraham Lincoln (/ˈlɪŋkən/ LINK-ən; February 12, 1809 – April 15, 1865) was an American lawyer, politician and statesman who served as the 16th president of the United States from 1861 until his assassination in 1865. Lincoln led the Union through the American Civil War to defend the nation as a constitutional union and succeeded in abolishing slavery, bolstering the federal government, and modernizing the U.S. economy.\n\nLincoln was born into poverty in a log cabin in Kentucky and was raised on the frontier, primarily in Indiana. He was self-educated and became a lawyer, Whig Party leader, Illinois state legislator, and U.S. Congressman from Illinois. In 1849, he returned to his successful law practice in central Illinois. In 1854, he was angered by the Kansas–Nebraska Act, which opened the territories to slavery, and he re-entered politics. He soon became a leader of the new Republican Party. He reached a national audience in the 1858 Senate campaign debates against Stephen A. Douglas. Lincoln ran for president in 1860, sweeping the North to gain victory. Pro-slavery elements in the South viewed his election as a threat to slavery, and Southern states began seceding from the nation. During this time, the newly formed Confederate States of America began seizing federal military bases in the south. Just over one month after Lincoln assumed the presidency, the Confederate States attacked Fort Sumter, a U.S. fort in South Carolina. Following the bombardment, Lincoln mobilized forces to suppress the rebellion and restore the union."
+      },
+      {
+        "template": "extract the names of",
+        "rows": 47,
+        "share": 0.031,
+        "distinct_answers": 47,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Extract the names of the cities and rank them in alphabetical order?\n\nThe United Kingdom is a constitutional monarchy and parliamentary democracy. Its capital and largest city is London, the capital of England, a global city and financial centre with a population of over 14 million people. Edinburgh, Cardiff and Belfast are the national capitals of Scotland, Wales and Northern Ireland respectively."
+      },
+      {
+        "template": "extract all of the",
+        "rows": 27,
+        "share": 0.018,
+        "distinct_answers": 27,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Extract all of the dates mentioned in this paragraph and list them using bullets in the format {Date} - {Description}\n\nDaniel Leavitt was born November 16, 1813, at Rye, New Hampshire, the son of Benning Leavitt, influential businessman, state senator, county commissioner and later Chicopee Selectman, and his wife Olive (Jenness) Leavitt. Daniel Leavitt married in 1838 at West Springfield, Massachusetts, Ruth Jeannette Ball. They had three children."
+      },
+      {
+        "template": "from the passage identify",
+        "rows": 23,
+        "share": 0.015,
+        "distinct_answers": 23,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "From the passage identify the most common colloquial terms for dismissal in the United States and United Kingdom. Display the results in comma separated format.\n\nTermination of employment or separation of employment is an employee's departure from a job and the end of an employee's duration with an employer. Termination may be voluntary on the employee's part, or it may be at the hands of the employer, often in the form of dismissal (firing) or a layoff. Dismissal or firing is usually thought to be the employee's fault, whereas a layoff is generally done for business reasons (for instance, a business slowdown, or an economic downturn) outside the employee's performance.\n\nFiring carries a stigma in many cultures and may hinder the jobseeker's chances of finding new employment, particularly if they have been terminated from a previous job. Jobseekers sometimes do not mention jobs from which they were fired on their resumes; accordingly, unexplained gaps in employment, and refusal or failure to contact previous employers are often regarded as \"red flags\".\n\nDismissal is when the employer chooses to require the employee to leave, usually for the reason that is the employee's fault. The most common colloquial terms for dismissal in the United States are \"getting fired\" or \"getting canned\" whereas in the United Kingdom the terms \"getting the sack\" or \"getting sacked\" are also used."
+      },
+      {
+        "template": "based on the following",
+        "rows": 19,
+        "share": 0.013,
+        "distinct_answers": 19,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Based on the following passage summarise how sunsets are viewed from the northern hemisphere across seasons.\n\nSunset, also known as sundown, is the daily disappearance of the Sun below the horizon due to Earth's rotation. As viewed from everywhere on Earth (except the North and South poles), the equinox Sun sets due west at the moment of both the spring and autumn equinoxes. As viewed from the Northern Hemisphere, the Sun sets to the northwest (or not at all) in the spring and summer, and to the southwest in the autumn and winter; these seasons are reversed for the Southern Hemisphere.\nThe time of sunset is defined in astronomy as the moment when the upper limb of the Sun disappears below the horizon. Near the horizon, atmospheric refraction causes sunlight rays to be distorted to such an extent that geometrically the solar disk is already about one diameter below the horizon when a sunset is observed.\nSunset is distinct from twilight, which is divided into three stages. The first one is civil twilight, which begins once the Sun has disappeared below the horizon, and continues until it descends to 6 degrees below the horizon. The second phase is nautical twilight, between 6 and 12 degrees below the horizon. The third phase is astronomical twilight, which is the period when the Sun is between 12 and 18 degrees below the horizon. Dusk is at the very end of astronomical twilight, and is the darkest moment of twilight just before night. Finally, night occurs when the Sun reaches 18 degrees below the horizon and no longer illuminates the sky.\nLocations further north than the Arctic Circle and further south than the Antarctic Circle experience no full sunset or sunrise on at least one day of the year, when the polar day or the polar night persists continuously for 24 hours."
+      }
+    ]
+  },
+  "open_qa": {
+    "rows": 3742,
+    "exact_dup_rows": 4,
+    "exact_dup_rate": 0.001,
+    "near_dup_rows": 10,
+    "near_dup_rate": 0.003,
+    "template_clusters": 2844,
+    "top1_template_share": 0.032,
+    "top3_template_share": 0.055,
+    "vocab_top50_coverage": 0.376,
+    "type_token_ratio": 0.103,
+    "length_modal_share": 0.255,
+    "length_modal_bucket_tokens": "0-9",
+    "answer_repetition": 0.003,
+    "response_length": {
+      "mean": 50.4,
+      "median": 27.0,
+      "min": 1,
+      "max": 1289
+    },
+    "worst_templates": [
+      {
+        "template": "what is the difference",
+        "rows": 120,
+        "share": 0.032,
+        "distinct_answers": 120,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What is the difference between pets and cattle?"
+      },
+      {
+        "template": "in the series a",
+        "rows": 44,
+        "share": 0.012,
+        "distinct_answers": 44,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "In the series A Song of Ice and Fire, who is the founder of House Karstark?"
+      },
+      {
+        "template": "what are the words",
+        "rows": 42,
+        "share": 0.011,
+        "distinct_answers": 41,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What are the words of House Reed?"
+      },
+      {
+        "template": "what are some of",
+        "rows": 31,
+        "share": 0.008,
+        "distinct_answers": 31,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "What are some of the best comedy movies of the 1980's?"
+      },
+      {
+        "template": "name some of the",
+        "rows": 29,
+        "share": 0.008,
+        "distinct_answers": 29,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Name some of the bravolebrities from Vanderpump Rules"
+      }
+    ]
+  },
+  "summarization": {
+    "rows": 1188,
+    "exact_dup_rows": 0,
+    "exact_dup_rate": 0.0,
+    "near_dup_rows": 0,
+    "near_dup_rate": 0.0,
+    "template_clusters": 950,
+    "top1_template_share": 0.029,
+    "top3_template_share": 0.061,
+    "vocab_top50_coverage": 0.368,
+    "type_token_ratio": 0.153,
+    "length_modal_share": 0.119,
+    "length_modal_bucket_tokens": "30-39",
+    "answer_repetition": 0.0,
+    "response_length": {
+      "mean": 81.8,
+      "median": 55.0,
+      "min": 2,
+      "max": 4391
+    },
+    "worst_templates": [
+      {
+        "template": "please give me a",
+        "rows": 35,
+        "share": 0.029,
+        "distinct_answers": 35,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Please give me a list of qualities that make the Masters is golf's top tournament unique?\n\nThe Masters is the first major championship of the year. Since 1948, its final round has been scheduled for the second Sunday of April, with several exceptions.\n\nThe Masters has the smallest field of the four golf major championships.\n\nThe Masters is an invitation only tournament.\n\nPrevious Champions are eligible to play for life."
+      },
+      {
+        "template": "without quoting directly from",
+        "rows": 21,
+        "share": 0.018,
+        "distinct_answers": 21,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Without quoting directly from the text give me a summary of the history of the Key Lime Pie.\n\nKey lime pie is probably derived from the \"Magic Lemon Cream Pie\" published in a promotional brochure by Borden, a producer of condensed milk, in 1931. The recipe is attributed to Borden's fictional spokesperson, Jane Ellison, and includes condensed milk, lemon juice and rind, and egg yolks. It is covered with meringue, baked, and served cold. According to the pastry chef Stella Parks, users of the recipe altered it with local ingredients; she describes it as \"a stunning reminder of how deeply America's traditions are shaped by advertising\".\n\nA \"Tropical Lime Chiffon Pie\", using condensed milk and egg yolks, is documented in a 1933 Miami newspaper article. An \"icebox lime pie\", was mentioned as a specialty of the Florida Keys in 1935.[full citation needed] and a recipe under the name \"Key Lime Pie\" was published in 1940.[full citation needed]\n\nNo earlier solid sources are known, despite appeals to the public. A 1927 Key West Women's Club cookbook does not mention the recipe. A 1926 restaurant menu includes \"lime pie\", but it is unclear what it was. Various accounts claim that it was known earlier, but none were recorded before 1933. A widely-reported story claims that William Curry's cook Aunt Sally invented it in the late 19th century. But there is no evidence for this, and the oldest version of this story dates to only 1895, in promotional materials for a Bed and Breakfast in Curry's former house.\n\nIt was in the 1950s that Key lime pie was promoted as Florida's \"most famous treat\" and in 1987 as \"the greatest of all regional American desserts.\""
+      },
+      {
+        "template": "tell me about the",
+        "rows": 17,
+        "share": 0.014,
+        "distinct_answers": 17,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Tell me about the 2017 Southeastern Conference football season\n\nThe 2017 Southeastern Conference football season was the 85th season of SEC football and took place during the 2017 NCAA Division I FBS football season. The season began on August 31 and will end with the 2017 SEC Championship Game on December 2. The SEC is a Power Five conference under the College Football Playoff format along with the Atlantic Coast Conference, the Big 12 Conference, the Big Ten Conference, and the Pac–12 Conference. For the 2017 season, the SEC has 14 teams divided into two divisions of seven each, named East and West."
+      },
+      {
+        "template": "from the given text",
+        "rows": 14,
+        "share": 0.012,
+        "distinct_answers": 14,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "From the given text, Please summarize the early life of Élodie Yung\n\nYung was born in Paris, on 22 February 1981. Her father is Cambodian and her mother is French. She grew up in Seine-Saint-Denis. Her father enrolled her in karate classes at age 9, and she eventually became a black belt in her late teens. Yung earned a law degree at the University of Paris with the intention of becoming a judge. However, at the age of 29, she instead pursued acting at the London Academy of Music and Dramatic Art."
+      },
+      {
+        "template": "give me a summary",
+        "rows": 12,
+        "share": 0.01,
+        "distinct_answers": 12,
+        "mean_pairwise_response_similarity": 0.0,
+        "example_prompt": "Give me a summary of 1812 war\n\nThe War of 1812 (18 June 1812 – 17 February 1815) was fought by the United States of America and its indigenous allies against the United Kingdom and its allies in British North America, with limited participation by Spain in Florida. Tensions originated in long-standing differences over territorial expansion in North America and British support for Native American tribes who opposed U.S. colonial settlement in the Northwest Territory."
+      }
+    ]
+  }
+}
