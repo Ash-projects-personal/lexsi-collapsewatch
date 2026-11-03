@@ -1,0 +1,42 @@
+{
+  "generated": "2026-11-02",
+  "seed": 42,
+  "raw_slice": {
+    "path": "finetune_raw_5k.jsonl",
+    "metrics": {
+      "rows": 5000,
+      "exact_dup_rows": 0,
+      "exact_dup_rate": 0.0,
+      "near_dup_rows": 6,
+      "near_dup_rate": 0.001,
+      "template_clusters": 3334,
+      "top1_template_share": 0.019,
+      "top3_template_share": 0.051,
+      "vocab_top50_coverage": 0.367,
+      "type_token_ratio": 0.085,
+      "answer_repetition": 0.001,
+      "length_modal_share": 0.184,
+      "length_modal_bucket_tokens": "10-19",
+      "response_length_mean": 63.8
+    }
+  },
+  "gated_slice": {
+    "path": "finetune_gated_5k.jsonl",
+    "metrics": {
+      "rows": 5000,
+      "exact_dup_rows": 0,
+      "exact_dup_rate": 0.0,
+      "near_dup_rows": 0,
+      "near_dup_rate": 0.0,
+      "template_clusters": 3360,
+      "top1_template_share": 0.018,
+      "top3_template_share": 0.052,
+      "vocab_top50_coverage": 0.367,
+      "type_token_ratio": 0.09,
+      "answer_repetition": 0.001,
+      "length_modal_share": 0.184,
+      "length_modal_bucket_tokens": "10-19",
+      "response_length_mean": 59.3
+    }
+  }
+}

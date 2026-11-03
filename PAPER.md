@@ -60,6 +60,14 @@ chaining deduplication with embedding-space diversification for pre-training.
 These methods remove redundancy; CollapseWatch goes one step further and
 measures the structural collapse that remains after dedup.
 
+**Data curation frameworks.** NVIDIA NeMo Curator and Hugging Face datatrove
+industrialize dedup, filtering, and decontamination for large-scale training
+data. They are infrastructure: they run the filters people already know.
+Neither measures collapse risk — template concentration, vocabulary
+narrowness, answer repetition — as a selection axis. CollapseWatch is a
+measurement first, a filter second, and it sits on top of these frameworks
+rather than replacing them.
+
 **Instruction-tuning data selection.** LIMA-style quality arguments, AlpaGasus
 (Chen et al., 2024), DEITA (Liu et al., 2024), and LESS (Xia et al., 2024)
 select on quality, complexity, and influence. Collapse risk is a different
@@ -199,7 +207,19 @@ punishing everything.
 - Single dataset (dolly-15k), single model (Tiny Aya 3B), single seed; the
   fine-tune comparison is one controlled experiment, not a benchmark sweep.
 - Dolly is unusually clean; the gate's value on noisier web-scale SFT mixes
-  is hypothesized, not shown.
+  is hypothesized, not shown. Read the whole result as conservative
+  calibration: on clean human data, the gate removes residual duplication
+  and passes the rest through.
+- The template-cap arm of the gate never fired on dolly-15k: zero rows
+  dropped by the 10% cap on the full 15,011-row corpus and zero on the
+  CuratorKIT-curated train split. Its behavior on a truly template-collapsed
+  dataset is hypothesized, not demonstrated.
+- Internal-consistency check (2026-11-02, no training): the same five
+  metrics on the two deterministic 5k fine-tune slices. Gated vs raw:
+  near-duplicate rows 0 vs 6 (0.12%), template clusters 3,360 vs 3,334,
+  top-1 template share 1.8% vs 1.9%, vocab top-50 coverage 36.7% vs 36.7%,
+  answer repetition 0.001 vs 0.001. The gate removes the residual near-dups
+  and otherwise leaves the slice essentially unchanged.
 - Compute limits (Colab free tier) cap the fine-tune budget at 5k rows and
   one epoch per arm.
 - Safety evaluation uses a refusal-rate probe on a public harmful-prompt
@@ -217,41 +237,59 @@ punishing everything.
 
 ## 9. Reproducibility
 
-Repo: (GitHub link at submission). All code in this paper was written
-2026-11-01–14. Datasets, adapters, and logs are hosted on Hugging Face
-(links at submission); the notebook `lexsi_finetune.ipynb` reproduces the
-fine-tune and eval runs end to end on Colab free tier. Seeds: 42
-everywhere. Commands: `python measure_dolly.py`,
-`python curator_pipeline.py`, `aligntune train --config
-aligntune_sft_raw.yaml`, `aligntune train --config
-aligntune_sft_gated.yaml`, `bash run_evals.sh`. The Oct-27 CollapseWatch CLI
-is imported as a library; the submission's new work is everything in this
-repo.
+Repo: `github.com/<HF_USER>/lexsi-collapsewatch` (link filled at submission).
+All code in this paper was written 2026-11-01–14 and is on disk in this
+repo. Datasets, adapters, and logs are hosted on Hugging Face
+(`<HF_USER>/lexsi-collapsewatch-dolly-raw-5k`,
+`<HF_USER>/lexsi-collapsewatch-dolly-gated-5k`, plus the two LoRA adapters;
+exact links filled after the Colab run). The notebook `lexsi_finetune.ipynb`
+reproduces the fine-tune and eval runs end to end on Colab free tier.
+Seeds: 42 everywhere. Commands: `python measure_dolly.py`,
+`python curator_pipeline.py`, `python measure_slices.py`,
+`aligntune train --config aligntune_sft_raw.yaml`,
+`aligntune train --config aligntune_sft_gated.yaml`, `bash run_evals.sh`.
+The Colab bundle (`colab_bundle/lexsi-collapsewatch-colab.zip`) contains
+the notebook, both 5k slices, both recipes, the eval config, and the
+two-step Colab launch notes; no credentials are included in it. The Oct-27
+CollapseWatch CLI is imported as a library; the submission's new work is
+everything in this repo.
 
 ## References
 
 - Abbas, A., Tirumala, K., Simig, D., Ganguli, S., and Morcos, A. S. (2023).
   SemDeDup: Data-efficient learning at web-scale through semantic
-  deduplication. ICLR 2023.
+  deduplication. [VERIFY: venue — listed as ICLR 2023 from memory, confirm
+  before submission.]
 - Chen, L., Li, S., Yan, J., Wang, H., Gunaratna, K., Yadav, V., Tang, Z.,
   Srinivasan, V., Zhou, T., Huang, H., and Jin, H. (2024). AlpaGasus:
-  Training a better alpaca with fewer data. ICLR 2024.
+  Training a better alpaca with fewer data. ICLR 2024. [VERIFY: full author
+  list from memory, confirm before submission.]
 - Hsiung, L., Pang, T., Tang, Y.-C., Song, L., and Ho, T.-Y. (2026). Why LLM
   safety guardrails collapse after fine-tuning: a similarity analysis between
-  alignment and fine-tuning datasets.
+  alignment and fine-tuning datasets. [VERIFY: could not confirm this
+  reference from training data; confirm it exists before submission.]
 - Lee, K., Ippolito, D., Nystrom, A., Zhang, C., Eck, D., Callison-Burch, C.,
   and Carlini, N. (2022). Deduplicating training data makes language models
   better. ACL 2022.
 - Liu, W., Zeng, W., He, K., Jiang, Y., and He, J. (2024). What makes good
   data for alignment? A comprehensive study of automatic data selection in
-  instruction tuning. ICLR 2024.
+  instruction tuning. [VERIFY: venue — listed as ICLR 2024 from memory,
+  confirm before submission.]
+- NVIDIA. NeMo Curator: scalable data curation tools for training and
+  evaluation of large language models. https://github.com/NVIDIA/NeMo-Curator
+  (toolkit, not a paper).
 - Qi, X. et al. (2024). Fine-tuning aligned language models compromises
   safety, even when users do not intend to. ICLR 2024.
 - Song, X., Cai, Z., and Zhao, L. (2026). When AI reviews its own code:
-  recursive self-training collapse in code LLMs. arXiv:2606.28438.
+  recursive self-training collapse in code LLMs. arXiv:2606.28438. [VERIFY:
+  could not confirm this reference from training data; confirm it exists
+  and the arXiv id is correct before submission.]
 - Tirumala, K., Simig, D., Aghajanyan, A., and Morcos, A. S. (2023). D4:
   Improving LLM pretraining via document de-duplication and diversification.
   NeurIPS 2023.
 - Xia, M., Malladi, S., Gururangan, S., Arora, S., and Chen, D. (2024). LESS:
   Selecting influential data for targeted instruction tuning. ICML 2024.
 - Databricks. databricks-dolly-15k. CC BY-SA 3.0. https://huggingface.co/datasets/databricks/databricks-dolly-15k
+- Hugging Face. datatrove: a library to process, filter and deduplicate
+  text data at a very large scale. https://github.com/huggingface/datatrove
+  (toolkit, not a paper).

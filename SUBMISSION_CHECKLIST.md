@@ -1,7 +1,8 @@
 # Lexsi submission checklist — CollapseWatch regrounded (Track A, problem #2)
 
 Verified against the event requirements (audit 2026-10-27, re-check the
-official rules page before submitting). Status as of 2026-11-01 EOD.
+official rules page before submitting). Status as of 2026-11-02 EOD
+(Day-2 build run).
 
 ## Event requirements
 
@@ -16,10 +17,17 @@ official rules page before submitting). Status as of 2026-11-01 EOD.
       prepared, not yet executed. The Colab notebook (lexsi_finetune.ipynb)
       pushes the two dataset slices, both LoRA adapters, and training logs
       to HF from Colab (never from the build VM, per the hf.co pause).
-      Needs: Ash's HF username filled into the notebook.
+      Colab-ready bundle packaged 2026-11-02: colab_bundle/
+      (lexsi-collapsewatch-colab.zip, 7 files, no credentials).
+      Needs: Ash's HF username filled into the notebook + Colab launch.
 - [ ] **Before-and-after metrics** — pipeline skeleton + eval configs ready;
-      Table 1 (collapse metrics) measured on real data today. The
-      raw-vs-gated fine-tune + AuditKIT evals run on Colab; results TBD.
+      Table 1 (collapse metrics) measured on real data 2026-11-01.
+      Internal-consistency check 2026-11-02 (measure_slices.py, real runs):
+      gated vs raw 5k slices — near-duplicate rows 0 vs 6 (0.12%), top-1
+      template share 1.8% vs 1.9%, vocab top-50 coverage 36.7% vs 36.7%,
+      answer repetition 0.001 both; gate removes residual near-dups and
+      otherwise passes the slice through. The raw-vs-gated fine-tune +
+      AuditKIT evals run on Colab; results TBD.
 - [x] **Chain the stack into a real pipeline (Track 1)** —
       `curator_pipeline.py` chains CuratorKIT -> gate -> slice export;
       AlignTune recipes and `run_evals.sh` (AuditKIT) continue the chain.
@@ -30,8 +38,11 @@ official rules page before submitting). Status as of 2026-11-01 EOD.
 - [x] **Novelty + name checks** — novelty verdict BUILD (fresh check Nov 1);
       "CollapseWatch" name check CLEAN (Oct 27 screening).
 - [x] **Real-data plan + paper outline** — done (PAPER.md; dolly-15k measured).
-- [ ] **Research paper draft** — intro/method/data/results-so-far drafted;
-      results tables fill in after the fine-tune.
+- [ ] **Research paper draft** — intro/method/data drafted; Related work,
+      Limitations, Future work, Reproducibility drafted 2026-11-02
+      (NeMo Curator + datatrove added; [VERIFY] tags on citation details I
+      could not confirm — confirm before submission). Fine-tune result
+      tables still TBD after the Colab run.
 - [ ] **Demo video (Ash records, 3 min max)** — after the fine-tune; his only step.
 - [ ] **Live demo if shortlisted (Demo Day Nov 22, online option)** — later.
 
