@@ -258,35 +258,32 @@ everything in this repo.
 
 - Abbas, A., Tirumala, K., Simig, D., Ganguli, S., and Morcos, A. S. (2023).
   SemDeDup: Data-efficient learning at web-scale through semantic
-  deduplication. [VERIFY: venue — listed as ICLR 2023 from memory, confirm
-  before submission.]
+  deduplication. ICML 2023.
 - Chen, L., Li, S., Yan, J., Wang, H., Gunaratna, K., Yadav, V., Tang, Z.,
   Srinivasan, V., Zhou, T., Huang, H., and Jin, H. (2024). AlpaGasus:
-  Training a better alpaca with fewer data. ICLR 2024. [VERIFY: full author
-  list from memory, confirm before submission.]
-- Hsiung, L., Pang, T., Tang, Y.-C., Song, L., and Ho, T.-Y. (2026). Why LLM
-  safety guardrails collapse after fine-tuning: a similarity analysis between
-  alignment and fine-tuning datasets. [VERIFY: could not confirm this
-  reference from training data; confirm it exists before submission.]
+  Training a better alpaca with fewer data. ICLR 2024.
+- Hsiung, L., Pang, T., Tang, Y.-C., Song, L., Ho, T.-Y., Chen, P.-Y., and
+  Yang, Y. (2026). Why LLM safety guardrails collapse after fine-tuning: a
+  similarity analysis between alignment and fine-tuning datasets. In
+  Proceedings of the 64th Annual Meeting of the Association for Computational
+  Linguistics (Volume 1: Long Papers), ACL 2026.
 - Lee, K., Ippolito, D., Nystrom, A., Zhang, C., Eck, D., Callison-Burch, C.,
   and Carlini, N. (2022). Deduplicating training data makes language models
   better. ACL 2022.
 - Liu, W., Zeng, W., He, K., Jiang, Y., and He, J. (2024). What makes good
   data for alignment? A comprehensive study of automatic data selection in
-  instruction tuning. [VERIFY: venue — listed as ICLR 2024 from memory,
-  confirm before submission.]
+  instruction tuning. ICLR 2024.
 - NVIDIA. NeMo Curator: scalable data curation tools for training and
   evaluation of large language models. https://github.com/NVIDIA/NeMo-Curator
   (toolkit, not a paper).
 - Qi, X. et al. (2024). Fine-tuning aligned language models compromises
   safety, even when users do not intend to. ICLR 2024.
 - Song, X., Cai, Z., and Zhao, L. (2026). When AI reviews its own code:
-  recursive self-training collapse in code LLMs. arXiv:2606.28438. [VERIFY:
-  could not confirm this reference from training data; confirm it exists
-  and the arXiv id is correct before submission.]
+  recursive self-training collapse in code LLMs. arXiv:2606.28438 (under
+  review).
 - Tirumala, K., Simig, D., Aghajanyan, A., and Morcos, A. S. (2023). D4:
   Improving LLM pretraining via document de-duplication and diversification.
-  NeurIPS 2023.
+  NeurIPS 2023 (Datasets and Benchmarks Track).
 - Xia, M., Malladi, S., Gururangan, S., Arora, S., and Chen, D. (2024). LESS:
   Selecting influential data for targeted instruction tuning. ICML 2024.
 - Databricks. databricks-dolly-15k. CC BY-SA 3.0. https://huggingface.co/datasets/databricks/databricks-dolly-15k
