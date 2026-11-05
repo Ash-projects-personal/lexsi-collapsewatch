@@ -3,6 +3,8 @@
 # and output_dir. Same model (CohereLabs/tiny-aya-base), same recipe, same
 # budget — the only difference the experiment measures is the
 # CollapseWatch gate. Do not change one without changing the other.
+# Model id CohereLabs/tiny-aya-base verified via the CohereLabs org listing
+# (Tiny Aya: Bridging Scale and Multilingual Depth, 3B, text generation).
 
 model:
   name_or_path: "CohereLabs/tiny-aya-base"
