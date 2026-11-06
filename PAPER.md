@@ -239,7 +239,7 @@ punishing everything.
 
 Repo: `github.com/<HF_USER>/lexsi-collapsewatch` (link filled at submission).
 All code in this paper was written 2026-11-01–14 and is on disk in this
-repo. Datasets, adapters, and logs are hosted on Hugging Face
+repo. Datasets, adapters, and logs will be hosted on Hugging Face
 (`<HF_USER>/lexsi-collapsewatch-dolly-raw-5k`,
 `<HF_USER>/lexsi-collapsewatch-dolly-gated-5k`, plus the two LoRA adapters;
 exact links filled after the Colab run). The notebook `lexsi_finetune.ipynb`

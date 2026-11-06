@@ -37,7 +37,8 @@ CuratorKIT dedups; CollapseWatch measures collapse risk and gates on it.
 | `PAPER.md` | Paper draft (intro/method/data/results-so-far; results TBD after fine-tune) |
 | `SUBMISSION_CHECKLIST.md` | Every Lexsi requirement and its status |
 
-**Measured today (real data, dolly-15k):** 16 exact-duplicate rows (0.1%),
+**Measured 2026-11-01 on real data (dolly-15k); re-verified byte-identical
+2026-11-04 and 2026-11-05:** 16 exact-duplicate rows (0.1%),
 65 near-duplicate rows (0.4%), 8,888 template clusters, top-1 template
 1.8%, vocab top-50 coverage 36.5%, answer repetition 0.002. Gate dropped
 35 rows (0.2%); template cap dropped 0 (clean human data passes through).
