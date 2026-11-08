@@ -3,7 +3,94 @@
 
 Verified against the event requirements (audit 2026-10-27; official rules
 page hackathon.lexsi.ai re-fetched and re-verified 2026-11-03 ~13:20 CDT).
-Status as of 2026-11-05 EOD (Day-5 build run).
+Status as of 2026-11-07 EOD (Day-7 build run).
+
+## 2026-11-07 Day-7 pipeline re-verification
+
+- **Full pipeline reproduces byte-identically, fifth consecutive run.**
+  `measure_dolly.py` re-run 2026-11-07 in the local `.venv`: regenerated
+  `collapse_dolly_full.json`, `collapse_dolly_by_category.json`, and
+  `TABLE1_dolly.md` are **byte-identical** to the 2026-11-01 outputs
+  (sha256-verified before/after). `measure_slices.py` re-run:
+  `collapse_slices_5k.json` unchanged. No HF.co traffic, no credentials.
+- **Pipeline manifest reconciled against the actual files (2026-11-07):**
+  dolly parquet on disk = 15,011 rows, cols
+  instruction/context/response/category/_split (at
+  `~/workspace/goals/free-ai-hackathon-wins/hidden_files/lexsi-prep/datasets/dolly-15k.parquet`,
+  unchanged since Oct 30);
+  `curator_out/train/sft_alpaca.jsonl` = 13,231; eval = 1,471 (13,231 +
+  1,471 = 14,702 curated); `curator_out/rejected.jsonl` = 270 (schema
+  gate); `dolly_gated.jsonl` = 13,225 (13,231 − 6 near-dups, gate stats
+  match); both 5k slices = 5,000 rows, seed 42. Every manifest figure
+  traces to a real file.
+- **PAPER.md: no numeric changes needed (2026-11-07).** Re-run outputs
+  are byte-identical to 2026-11-01, so the Day-5 full truth-check still
+  holds; spot-verified again today against the regenerated JSONs (16/65
+  dups, 8,888/8,882 clusters, 1.8%/5.1% top-1/top-3, 36.5% vocab50,
+  0.051 TTR, 0.002/0.001 answer rep, 18.9% modal bucket, 60.9/60.7 mean
+  len; gate drops 35 = 16+19, cap drops 0; category counts sum to
+  15,011; 5k slices 6 vs 0 near-dups, 3,334 vs 3,360 clusters). No real
+  artifact contradicts any paper number.
+- **Banned-metrics sweep 2026-11-07:** full banned list from the
+  parallel-build-plan (14,000-doc RAG, 98.7% uptime, 38ms inference,
+  91.4% accuracy, TensorRT, Grad-CAM, heart-failure AUC, plus the
+  portfolio-audit set) grepped across all workspace files: **zero
+  project claims.** The only raw hits are verbatim dolly-15k source text
+  inside the dataset files themselves ("heart failure" as a pneumonia
+  risk factor / disease mention in curator_out rows; "14,000 people",
+  "14,000 screens", "14,000 years ago", "91.4"/"97.3"/"8,400" only
+  inside dataset rows) — real public dataset content, not project
+  claims, and no fix applies. The checklist's own sweep record naming
+  the searched terms is a meta-mention, not a claim. No "JD Keywords"
+  label; no spelled-out "percent"; no he/his/she/her pronouns in the
+  project docs (the only "them" hits refer to datasets/metrics, not a
+  person). Colab bundle zip contents clean.
+- **Colab bundle still in sync:** all 5 bundle files byte-identical to
+  the workspace copies (zip rebuilt 2026-11-04; no bundle source changed
+  since). No eval outputs, checkpoints, LoRA adapters, training logs, or
+  HF result files anywhere in the workspace.
+- **Configs:** raw vs gated AlignTune recipes still identical except
+  dataset name, run_name, output_dir (plus the header comment wording;
+  diff re-checked 2026-11-07).
+
+## 2026-11-06 Day-6 pipeline re-verification
+
+- **Full pipeline reproduces byte-identically, fourth consecutive run.**
+  `measure_dolly.py` re-run 2026-11-06 in the local `.venv`: regenerated
+  `collapse_dolly_full.json`, `collapse_dolly_by_category.json`, and
+  `TABLE1_dolly.md` are **byte-identical** to the 2026-11-01 outputs
+  (sha256-verified before/after). `measure_slices.py` re-run:
+  `collapse_slices_5k.json` unchanged. No HF.co traffic, no credentials.
+- **Pipeline manifest reconciled against the actual files (2026-11-06):**
+  dolly parquet on disk = 15,011 rows, cols
+  instruction/context/response/category/_split (at
+  `~/workspace/goals/free-ai-hackathon-wins/hidden_files/lexsi-prep/datasets/dolly-15k.parquet`,
+  unchanged since Oct 30);
+  `curator_out/train/sft_alpaca.jsonl` = 13,231; eval = 1,471 (13,231 +
+  1,471 = 14,702 curated); `curator_out/rejected.jsonl` = 270 (schema
+  gate); `dolly_gated.jsonl` = 13,225 (13,231 − 6 near-dups, gate stats
+  match); both 5k slices = 5,000 rows, seed 42. Every manifest figure
+  traces to a real file.
+- **PAPER.md: no numeric changes needed (2026-11-06).** Re-run outputs
+  are byte-identical to 2026-11-01, so the Day-5 full truth-check still
+  holds; no real artifact contradicts any paper number.
+- **Banned-metrics sweep 2026-11-06:** full banned list from the
+  parallel-build-plan (14,000-doc RAG, 98.7% uptime, 38ms inference,
+  91.4% accuracy, TensorRT, Grad-CAM, heart-failure AUC, plus the
+  portfolio-audit set) grepped across all workspace files: **zero
+  project claims.** The only raw hits are verbatim dolly-15k source text
+  inside the dataset files themselves ("14,000 people" at a board-game
+  convention, "heart failure" as a pneumonia risk factor, "14,000
+  screens" for Avatar, "14,000 years ago" for the Great Lakes, "91.4"
+  and "97.3"/"8,400" only inside dataset rows) — real public dataset
+  content, not project claims, and no fix applies. The checklist's own
+  sweep record naming the searched terms is a meta-mention, not a claim.
+- **Colab bundle still in sync:** all 6 bundle files byte-identical to
+  the workspace copies (zip rebuilt 2026-11-04; no bundle source changed
+  since). No eval outputs, checkpoints, LoRA adapters, training logs, or
+  HF result files anywhere in the workspace.
+- **Configs:** raw vs gated AlignTune recipes still identical except
+  dataset name, run_name, output_dir (diff re-checked 2026-11-06).
 
 ## 2026-11-05 Day-5 pipeline re-verification
 
@@ -159,6 +246,33 @@ Status as of 2026-11-05 EOD (Day-5 build run).
       fine-tuned small model) — can be drafted from the fine-tune run's
       GPU-hour numbers once Ash's Colab run completes.
 - [ ] **Live demo if shortlisted (Demo Day Nov 22, online option)** — later.
+
+## 2026-11-07 status
+
+- Still blocked on the single Ash-gated chain: Colab notebook NOT yet run
+  (no fine-tune metrics, eval outputs, or HF result files in the workspace
+  as of 2026-11-07 ~12:40 CST; workspace file scan confirms none outside
+  the `.venv`, and no file changed since Nov 6 18:24 except the Day-7
+  re-verification outputs). Raw-vs-gated fine-tune + AuditKIT evals remain
+  the one blocker for PAPER.md results, the abstract final draft, the ROI
+  comparison, and the demo video. Everything upstream is re-verified and
+  stable for the fifth consecutive day. Submission due Nov 14 AoE — 7 days
+  left.
+- Registration: already done (solo, ticket #0H8C-TZBE-AJ6K). Registration
+  closed Nov 5 — no action needed, already registered.
+
+## 2026-11-06 status
+
+- Still blocked on the single Ash-gated chain: Colab notebook NOT yet run
+  (no fine-tune metrics, eval outputs, or HF result files in the workspace
+  as of 2026-11-06 ~12:30 CST; workspace file scan confirms none outside
+  the `.venv`, and no file changed since Nov 4 18:27 except the Day-5
+  re-verification outputs). Raw-vs-gated fine-tune + AuditKIT evals remain
+  the one blocker for PAPER.md results, the abstract final draft, the ROI
+  comparison, and the demo video. Everything upstream is re-verified and
+  stable for the fourth consecutive day.
+- Registration: already done (solo, ticket #0H8C-TZBE-AJ6K). Registration
+  closed Nov 5 — no action needed, already registered.
 
 ## 2026-11-05 status
 
