@@ -3,7 +3,67 @@
 
 Verified against the event requirements (audit 2026-10-27; official rules
 page hackathon.lexsi.ai re-fetched and re-verified 2026-11-03 ~13:20 CDT).
-Status as of 2026-11-07 EOD (Day-7 build run).
+Status as of 2026-11-08 EOD (Day-8 build run).
+
+## 2026-11-08 Day-8 pipeline re-verification
+
+- **Full pipeline reproduces byte-identically, sixth consecutive run.**
+  `measure_dolly.py` re-run 2026-11-08 in the local `.venv`: regenerated
+  `collapse_dolly_full.json`, `collapse_dolly_by_category.json`, and
+  `TABLE1_dolly.md` are **byte-identical** to the pre-run files
+  (sha256-verified before/after: full 1e4b0fca…, by-category ef0574a0…,
+  TABLE1 d3c3fbc9…). `measure_slices.py` re-run: `collapse_slices_5k.json`
+  unchanged (fe6fb810…). Note for future runs: the literal 2026-11-01
+  hash values were never written into any day log, so the chain rests on
+  the Day-5/6/7 sha256-verified claims plus unchanged file mtimes since
+  Nov 7; the four hashes above are now recorded here so Day-9 can compare
+  directly. No HF.co traffic, no credentials.
+- **Pipeline manifest reconciled against the actual files (2026-11-08):**
+  dolly parquet on disk = 15,011 rows, cols
+  instruction/context/response/category/_split (at
+  `~/workspace/goals/free-ai-hackathon-wins/hidden_files/lexsi-prep/datasets/dolly-15k.parquet`,
+  unchanged since Oct 30);
+  `curator_out/train/sft_alpaca.jsonl` = 13,231; eval = 1,471 (13,231 +
+  1,471 = 14,702 curated); `curator_out/rejected.jsonl` = 270 (schema
+  gate); `dolly_gated.jsonl` = 13,225 (13,231 − 6 near-dups, gate stats
+  match); both 5k slices = 5,000 rows, seed 42. Curator manifest stage
+  counts also agree (15,011 → 14,741 after 270 schema rejections →
+  14,725 exact-dedup → 14,702 MinHash = train + eval). Every manifest
+  figure traces to a real file.
+- **PAPER.md: no numeric changes needed (2026-11-08).** Re-run outputs
+  are byte-identical, so the Day-5 full truth-check still holds; the
+  5k-slice table re-printed today matches the paper's slice block (6 vs
+  0 near-dups, 3,334 vs 3,360 clusters, 1.9% vs 1.8% top-1, 36.7% vocab50
+  both, 0.001 answer rep both). No real artifact contradicts any paper
+  number.
+- **Banned-metrics sweep 2026-11-08:** full banned list from the
+  parallel-build-plan (14,000-doc RAG, 98.7% uptime, 38ms inference,
+  91.4% accuracy, TensorRT, Grad-CAM, heart-failure AUC, plus the
+  portfolio-audit set) grepped across the project docs, scripts, and
+  configs: **zero project claims.** The only raw hits are this
+  checklist's own sweep record naming the searched terms (meta-mention,
+  not a claim). Dataset files still carry the known verbatim dolly-15k
+  source text ("heart failure" in 3 `dolly_raw.jsonl` rows, "14,000" in
+  11) — real public dataset content, not project claims, no fix applies.
+  No "JD Keywords" label (only this checklist's "No JD Keywords label"
+  meta-mention); no spelled-out "percent" (only the meta-mention);
+  no he/his/she/her pronouns in the project docs (the only "He" hits
+  are author surnames in PAPER.md references, e.g. "He, K."). Colab
+  bundle zip contents clean (notebook + yamls swept, no hits).
+- **Colab bundle still in sync:** all 5 bundle files byte-identical to
+  the workspace copies (zip rebuilt 2026-11-04; no bundle source changed
+  since). No eval outputs, checkpoints, LoRA adapters, training logs, or
+  HF result files anywhere in the workspace: the only file changed in
+  `lexsi-collapsewatch/` since Day-7 is this checklist, and the only
+  `.safetensors`/`adapter_config.json`/`trainer_state.json` hits in the
+  workspace belong to unrelated projects (teardown-work timestral /
+  statebench models, `projects/rebuilds/llm-finetuning-pipeline`).
+- **Configs:** raw vs gated AlignTune recipes still identical except
+  dataset name, run_name, output_dir (plus the header comment wording;
+  diff re-checked 2026-11-08).
+- **Single open blocker, unchanged:** Ash's HF username → Colab launch
+  (raw-vs-gated fine-tune + AuditKIT evals) → PAPER.md §6.2, abstract
+  final, ROI draft, demo video. Submission due Nov 14 AoE — 6 days left.
 
 ## 2026-11-07 Day-7 pipeline re-verification
 
