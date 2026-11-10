@@ -3,9 +3,102 @@
 
 Verified against the event requirements (audit 2026-10-27; official rules
 page hackathon.lexsi.ai re-fetched and re-verified 2026-11-03 ~13:20 CDT).
-Status as of 2026-11-08 EOD (Day-8 build run).
+Status as of 2026-11-10 (Day-10 build run).
 
-## 2026-11-08 Day-8 pipeline re-verification
+## 2026-11-10 Day-10 pipeline re-verification
+
+- **Full pipeline reproduces byte-identically, eighth consecutive run.**
+  `measure_dolly.py` re-run 2026-11-10 in the local `.venv`: regenerated
+  `collapse_dolly_full.json`, `collapse_dolly_by_category.json`, and
+  `TABLE1_dolly.md` are **byte-identical** to the pre-run files
+  (sha256-verified before/after, all four hashes match the Day-9 literal
+  values exactly: full 1e4b0fca…, by-category ef0574a0…,
+  slices fe6fb810…, TABLE1 d3c3fbc9…). `measure_slices.py` re-run:
+  `collapse_slices_5k.json` unchanged (fe6fb810…); slice table re-printed
+  identical (near-dups 6 vs 0, clusters 3,334 vs 3,360, top-1 1.9% vs
+  1.8%, vocab50 36.7% both, answer rep 0.001 both). No HF.co traffic, no
+  credentials. /tmp healthy at run start (469M free), nothing written
+  to /tmp.
+- **Pipeline manifest reconciled against the actual files (2026-11-10):**
+  dolly parquet on disk = 15,011 rows, cols
+  instruction/context/response/category/_split (at
+  `~/workspace/goals/free-ai-hackathon-wins/hidden_files/lexsi-prep/datasets/dolly-15k.parquet`,
+  unchanged since Oct 30);
+  `curator_out/train/sft_alpaca.jsonl` = 13,231; eval = 1,471 (13,231 +
+  1,471 = 14,702 curated); `curator_out/rejected.jsonl` = 270 (schema
+  gate); `dolly_gated.jsonl` = 13,225 (13,231 − 6 near-dups, gate stats
+  match); both 5k slices = 5,000 rows, seed 42. Every manifest figure
+  traces to a real file; no mismatch.
+- **PAPER.md: no numeric changes needed (2026-11-10).** Re-run outputs
+  are byte-identical, so the Day-5 full truth-check still holds; the
+  5k-slice table re-printed today matches the paper's slice block. No
+  real artifact contradicts any paper number. PAPER.md untouched today.
+- **Banned-metrics sweep 2026-11-10:** full banned list from the
+  parallel-build-plan grepped across PAPER.md and README.md:
+  **zero project claims.** No "JD Keywords" label; no spelled-out
+  "percent". The only pronoun hits are generic plurals referring to
+  data/prompts ("They are infrastructure", "their first four") plus one
+  author initial ("He, K.") in a citation, not person pronouns. One
+  regex artifact noted: the unescaped pattern `3.4` matched "3,360 vs
+  3,334" in PAPER.md:219 (the paper's own real measured cluster counts);
+  no literal "3.4" exists in either doc, and the banned "3.4–4.6 blind
+  eval" pattern scores zero. Colab bundle unchanged since Nov 4 (dir
+  mtime Nov 4 18:26 UTC), so its Day-8 clean sweep still stands.
+- **Colab fine-tune results: still NONE (2026-11-10).** Workspace scan
+  found no eval outputs, checkpoints, LoRA adapters, training logs, or
+  HF result files: no `.safetensors` / `adapter_config.json` /
+  `trainer_state.json` / `checkpoint-*` hits in `lexsi-collapsewatch/`
+  or `lexsi-prep/` outside venv site-packages, and the only files
+  changed in `lexsi-collapsewatch/` since Day-9 are the Day-9 re-run
+  outputs themselves and this checklist. `lexsi-prep/` unchanged since
+  Oct 30. Blocker unchanged: Ash's HF username → Colab launch.
+  Submission due end of day Nov 14 AoE — 4 days left.
+
+## 2026-11-09 Day-9 pipeline re-verification
+
+- **Full pipeline reproduces byte-identically, seventh consecutive run.**
+  `measure_dolly.py` re-run 2026-11-09 in the local `.venv`: regenerated
+  `collapse_dolly_full.json`, `collapse_dolly_by_category.json`, and
+  `TABLE1_dolly.md` are **byte-identical** to the pre-run files
+  (sha256-verified before/after, all four hashes match the Day-8 literal
+  values exactly: full 1e4b0fca…, by-category ef0574a0…,
+  slices fe6fb810…, TABLE1 d3c3fbc9…). `measure_slices.py` re-run:
+  `collapse_slices_5k.json` unchanged (fe6fb810…). No HF.co traffic, no
+  credentials. /tmp was healthy at run start (464M free), nothing written
+  to /tmp.
+- **Pipeline manifest reconciled against the actual files (2026-11-09):**
+  dolly parquet on disk = 15,011 rows, cols
+  instruction/context/response/category/_split (at
+  `~/workspace/goals/free-ai-hackathon-wins/hidden_files/lexsi-prep/datasets/dolly-15k.parquet`,
+  unchanged since Oct 30);
+  `curator_out/train/sft_alpaca.jsonl` = 13,231; eval = 1,471 (13,231 +
+  1,471 = 14,702 curated); `curator_out/rejected.jsonl` = 270 (schema
+  gate); `dolly_gated.jsonl` = 13,225 (13,231 − 6 near-dups, gate stats
+  match); both 5k slices = 5,000 rows, seed 42. Every manifest figure
+  traces to a real file; no mismatch.
+- **PAPER.md: no numeric changes needed (2026-11-09).** Re-run outputs
+  are byte-identical, so the Day-5 full truth-check still holds; the
+  5k-slice table re-printed today matches the paper's slice block (6 vs
+  0 near-dups, 3,334 vs 3,360 clusters, 1.9% vs 1.8% top-1, 36.7% vocab50
+  both, 0.001 answer rep both). No real artifact contradicts any paper
+  number.
+- **Banned-metrics sweep 2026-11-09:** full banned list from the
+  parallel-build-plan grepped across PAPER.md and README.md:
+  **zero project claims.** No "JD Keywords" label; no spelled-out
+  "percent". The only pronoun hits are generic plurals referring to
+  data/prompts ("They are infrastructure", "their first four"), not
+  person pronouns; no he/his/she/her in the project docs. Colab bundle
+  unchanged since Nov 4 (no bundle source changed), so its Day-8 clean
+  sweep still stands.
+- **Colab fine-tune results: still NONE (2026-11-09).** Workspace-wide
+  scan found no eval outputs, checkpoints, LoRA adapters, training
+  logs, or HF result files: the only `.safetensors` /
+  `*eval*result*` hits in the Lexsi dirs are venv site-packages files,
+  and the workspace-wide newer-than-Day-8 scan returned zero new
+  fine-tune files. `lexsi-prep/` unchanged since Oct 30; the only
+  files changed in `lexsi-collapsewatch/` since Day-7 are the Day-8
+  re-run outputs and this checklist. Blocker unchanged: Ash's HF
+  username → Colab launch.
 
 - **Full pipeline reproduces byte-identically, sixth consecutive run.**
   `measure_dolly.py` re-run 2026-11-08 in the local `.venv`: regenerated
