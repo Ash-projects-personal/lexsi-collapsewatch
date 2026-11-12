@@ -3,7 +3,59 @@
 
 Verified against the event requirements (audit 2026-10-27; official rules
 page hackathon.lexsi.ai re-fetched and re-verified 2026-11-03 ~13:20 CDT).
-Status as of 2026-11-10 (Day-10 build run).
+Status as of 2026-11-11 (Day-11 re-verify). Stage 1 deadline EXTENDED to Sun Nov 15, 11:59 PM AoE (Lexsi Labs mail from Ram Kadiyala, Gmail id 1a1ca63408625a48; supersedes the Nov 14 date).
+
+## 2026-11-11 Day-11 re-verify (hash compare + manifest + banned-metrics sweep)
+
+- **Determinism: all four hashes MATCH the Nov 10 recorded values
+  (ninth consecutive byte-identical run).** Hashes recomputed
+  2026-11-11 and compared directly against the Day-10 literals:
+  `collapse_dolly_full.json`
+  1e4b0fcaf47180ee7ac06a54bb9003177688d5ff006fc1f7eb2f462b141a1529 (match),
+  `collapse_dolly_by_category.json`
+  ef0574a0547954867306be664e055ba8f6131e9b09411d517ace4fbd8920f016 (match),
+  `collapse_slices_5k.json`
+  fe6fb810416df397f5c1f472a6d68e51c72b24aaa775c985a8a1fa05ee23813b (match),
+  `TABLE1_dolly.md`
+  d3c3fbc97b2ae100130bc721498e875a91a39bb149347b60ca05c410966e5f36 (match).
+  Hash-only re-verify this run (no measure-script re-run needed: identical
+  hashes prove byte-identical files). No HF.co traffic, no credentials.
+- **Colab fine-tune results: still NONE (2026-11-11).** Workspace scan
+  found no eval outputs, checkpoints, LoRA adapters, training logs, or
+  HF result files in `lexsi-collapsewatch/` or `lexsi-prep/`: no
+  `.safetensors` / `adapter_config.json` / `trainer_state.json` /
+  `training_args.bin` / `checkpoint-*` / `*eval*result*` hits outside
+  venv site-packages. The only files changed in `lexsi-collapsewatch/`
+  since Nov 10 12:00 UTC are the Day-10 re-run outputs themselves
+  (collapse JSONs, TABLE1, Nov 10 18:20–18:21 UTC) and this checklist.
+  `lexsi-prep/` has no files changed since Nov 10 12:00 UTC and is
+  unchanged since Oct 30 (only the Oct 30 fetch/install/retry logs).
+  The `.safetensors` / adapter hits elsewhere in the workspace belong to
+  the unrelated `projects/rebuilds/llm-finetuning-pipeline/` portfolio
+  rebuild, not Lexsi. Colab NOT launched (Ash-gated); no hf.co access,
+  no credits claim. Blocker unchanged: Ash's HF username → Colab launch
+  (raw-vs-gated fine-tune + AuditKIT evals) → PAPER.md §6.2, abstract
+  final, ROI draft, demo video.
+- **Pipeline manifest reconciled against the actual files (2026-11-11):**
+  dolly parquet on disk = 15,011 rows (verified via pyarrow, cols
+  instruction/context/response/category/_split);
+  `curator_out/train/sft_alpaca.jsonl` = 13,231; eval = 1,471 (13,231 +
+  1,471 = 14,702 curated); `curator_out/rejected.jsonl` = 270 (schema
+  gate); `dolly_gated.jsonl` = 13,225 (13,231 − 6 near-dups, gate stats
+  match); both 5k slices = 5,000 rows, seed 42. Every manifest figure
+  traces to a real file; no mismatch.
+- **Banned-metrics sweep 2026-11-11: zero project claims.** Full banned
+  list from the parallel-build-plan grepped across PAPER.md and
+  README.md: no banned portfolio-audit metrics, no "JD Keywords" label,
+  no spelled-out "percent", no he/his/she/her/him person pronouns, no
+  literal "3.4" in either doc. The only they/their hits are the same
+  generic plurals documented on Day-10, referring to data/prompts/
+  templates (PAPER.md:15, 39, 45–46, 65, 69, 98; README.md:10), plus
+  one author initial ("He, K.") in a citation (PAPER.md:273) — not
+  person pronouns, not violations. PAPER.md untouched today.
+- **Deadline update:** Stage 1 deadline EXTENDED to Sun Nov 15,
+  11:59 PM AoE (Lexsi Labs mail from Ram Kadiyala, Gmail id
+  1a1ca63408625a48). 4 days left from Nov 11.
 
 ## 2026-11-10 Day-10 pipeline re-verification
 
