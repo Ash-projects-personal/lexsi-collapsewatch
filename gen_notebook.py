@@ -54,7 +54,7 @@ then evals. Do NOT run it twice; the fine-tune is the experiment.
 code("!nvidia-smi")
 
 code(
-    """!pip install -q curatorkit aligntune auditkit datasets huggingface_hub tensorboard
+    """!pip install -q curatorkit aligntune "auditkit[lmeval]" datasets huggingface_hub tensorboard
 print("toolkits installed")"""
 )
 
@@ -132,7 +132,7 @@ md(
     """## 4. Fine-tune run 1: RAW slice
 
 `CohereLabs/tiny-aya-base`, LoRA r=32, 1 epoch, 160 steps, batch 4 x 8
-accumulation, lr 1e-4, seed 42, bf16. Expect roughly 30-60 minutes on a
+accumulation, lr 1e-4, seed 42, fp16 (T4 has no bf16 support). Expect roughly 30-60 minutes on a
 Colab T4. If the runtime disconnects, re-run from cell 1 of section 3
 (the train resumes nothing; a fresh start is the clean experiment).
 """

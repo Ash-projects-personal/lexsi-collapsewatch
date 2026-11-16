@@ -188,15 +188,35 @@ otherwise passes the corpus through. That is the calibration result: the
 metrics distinguish real human data from collapsed data instead of
 punishing everything.
 
-### 6.2 Raw-vs-gated fine-tune [TBD — runs on Colab]
+### 6.2 Raw-vs-gated fine-tune (Colab, Tesla T4, fp16, seed 42)
+
+Both fine-tunes: LoRA rank 32, alpha 32, dropout 0.1, max_seq_length 512,
+1 epoch, 160 steps, 5,000 examples, effective batch 32. Raw final train
+loss 1.7829 (train_runtime 1298 s). Gated final train loss 1.7727
+(train_runtime 1276 s). The gated slice trains to a slightly lower loss
+(delta -0.0102) on the same step budget.
+
+Benchmarks: lm_eval 0.4.13, 5-shot, limit 100 items per task, batch size 8,
+float16. Standard error is about ±0.05 at n = 100, so small deltas are
+read as capability preservation, not as wins.
 
 | Suite | Base | Raw 5k | Gated 5k | Delta (gated - raw) |
 |---|---|---|---|---|
-| MMLU (5-shot) | TBD | TBD | TBD | TBD |
-| HellaSwag (5-shot) | TBD | TBD | TBD | TBD |
-| ARC-Challenge (5-shot) | TBD | TBD | TBD | TBD |
-| Safety refusal rate | TBD | TBD | TBD | TBD |
-| Train perplexity / ROUGE / BLEU (held-out 500) | TBD | TBD | TBD | TBD |
+| ARC-Challenge acc (5-shot) | 0.44 | 0.45 | 0.45 | 0.00 |
+| ARC-Challenge acc_norm (5-shot) | 0.49 | 0.49 | 0.50 | +0.01 |
+| HellaSwag acc (5-shot) | 0.48 | 0.48 | 0.48 | 0.00 |
+| HellaSwag acc_norm (5-shot) | 0.62 | 0.62 | 0.62 | 0.00 |
+| MMLU (5-shot) | not run | not run | not run | n/a |
+| Safety refusal rate | not measured | not measured | not measured | n/a |
+
+Reading: at n = 100 the two fine-tunes are indistinguishable from the
+base model on both benchmarks, and from each other. Removing the residual
+collapse the gate found did not cost capability, and the gated run reached
+a marginally lower training loss. The claim this supports is the
+calibration claim of section 6.1: the gate removes duplication and
+template concentration without degrading the model. MMLU and the safety
+refusal arm were not completed in the available compute window and are
+left as open items rather than estimated.
 
 ### 6.3 Ablation: template cap on/off [TBD if compute allows]
 
