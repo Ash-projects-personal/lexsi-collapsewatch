@@ -3,7 +3,37 @@
 
 Verified against the event requirements (audit 2026-10-27; official rules
 page hackathon.lexsi.ai re-fetched and re-verified 2026-11-03 ~13:20 CDT).
-Status as of 2026-11-14 (Day-14 re-verify). Stage 1 deadline EXTENDED to Sun Nov 15, 11:59 PM AoE (Lexsi Labs mail from Ram Kadiyala, Gmail id 1a1ca63408625a48; supersedes the Nov 14 date).
+Status as of 2026-11-15 (Day-15 re-verify). Stage 1 deadline EXTENDED to Sun Nov 15, 11:59 PM AoE (Lexsi Labs mail from Ram Kadiyala, Gmail id 1a1ca63408625a48; supersedes the Nov 14 date).
+
+## 2026-11-15 Day-15 re-verify (hash compare + Colab check + first-submit feasibility)
+
+- **Determinism: all four hashes MATCH the Day-14 recorded values
+  (thirteenth consecutive byte-identical run).** Hashes recomputed
+  2026-11-15 with sha256sum and compared directly against the Day-14
+  literals: `collapse_dolly_full.json`
+  1e4b0fcaf47180ee7ac06a54bb9003177688d5ff006fc1f7eb2f462b141a1529 (match),
+  `collapse_dolly_by_category.json`
+  ef0574a0547954867306be664e055ba8f6131e9b09411d517ace4fbd8920f016 (match),
+  `collapse_slices_5k.json`
+  fe6fb810416df397f5c1f472a6d68e51c72b24aaa775c985a8a1fa05ee23813b (match),
+  `TABLE1_dolly.md`
+  d3c3fbc97b2ae100130bc721498e875a91a39bb149347b60ca05c410966e5f36 (match).
+- **Colab fine-tune results: still NONE (2026-11-15).** Only file newer
+  than Nov 11 18:30 UTC in `lexsi-collapsewatch/` is this checklist
+  (the Day-14 update itself). No eval outputs, checkpoints, LoRA
+  adapters, training logs, or HF result files anywhere in the Lexsi
+  workspace. Colab NOT launched (Ash-gated). No HF username appears
+  anywhere in ~/memory/2026-11-15.md.
+- **Banned-metrics sweep: unchanged, zero project claims.** PAPER.md
+  (Nov 5), README.md (Nov 5), abstract_draft.md (Nov 4) all untouched
+  since Day-14, so the Day-14 sweep result stands.
+- **First-submit feasibility: NOT feasible today.** Same as Day-14:
+  the packet requires two public un-gated HF collections (model +
+  dataset) and before/after metrics, both produced only by the Colab
+  run. No HF username, Colab never launched, no demo video. Blocker
+  unchanged: Ash's HF username → Colab launch → PAPER.md §6.2,
+  abstract final, ROI draft, demo video. Submit Mon Nov 16, 11:59 PM
+  AoE (~05:59 CST), only after the Colab run lands.
 
 ## 2026-11-14 Day-14 re-verify (hash compare + Colab check + first-submit feasibility)
 
