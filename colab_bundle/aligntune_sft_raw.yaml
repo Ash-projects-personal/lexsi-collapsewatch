@@ -9,7 +9,7 @@
 model:
   name_or_path: "CohereLabs/tiny-aya-base"
   backend: unsloth
-  precision: bf16
+  precision: fp16
   quantization:
     load_in_4bit: false
   gradient_checkpointing: true
@@ -43,7 +43,8 @@ train:
   max_grad_norm: 1.0
   save_interval: 40
   eval_interval: 80
-  bf16: true
+  bf16: false
+  fp16: true
   seed: 42
 
 evaluation:

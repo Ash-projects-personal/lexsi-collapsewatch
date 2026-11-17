@@ -3,7 +3,15 @@
 
 Verified against the event requirements (audit 2026-10-27; official rules
 page hackathon.lexsi.ai re-fetched and re-verified 2026-11-03 ~13:20 CDT).
-Status as of 2026-11-15 (Day-15 re-verify). Stage 1 deadline EXTENDED to Sun Nov 15, 11:59 PM AoE (Lexsi Labs mail from Ram Kadiyala, Gmail id 1a1ca63408625a48; supersedes the Nov 14 date).
+Status as of 2026-11-16 (Day-16 re-verify). Stage 1 deadline PASSED Mon Nov 16, 05:59 CST; submission outcome UNCONFIRMED (see Day-16 section). Stage 1 deadline EXTENDED to Sun Nov 15, 11:59 PM AoE (Lexsi Labs mail from Ram Kadiyala, Gmail id 1a1ca63408625a48; supersedes the Nov 14 date).
+
+## 2026-11-16 Day-16 re-verify (hash compare + push + HF + Gmail confirmation check)
+
+- **Submission outcome: STILL UNCONFIRMED.** Gmail re-checked ~12:18 CST in BOTH accounts (shetty.ashishwork, arshetty304): `lexsi after:2026/11/16` returns NO messages in either; spam holds only the Oct 27 info mail and Nov 1 kickoff. No confirmation mail, no submission ID. Form was fully filled 05:25-05:30 CST but blocked on the human reCAPTCHA; Ash was alerted pre-deadline and asked ~07:02 CST to confirm; no reply on record as of ~12:20 CST. Do NOT record as submitted or closed unsubmitted — only Ash's word or a Lexsi confirmation can settle it.
+- **Determinism: all four hashes MATCH the Day-15 recorded values (14th consecutive byte-identical run).** collapse_dolly_full.json 1e4b0fca...1529, collapse_dolly_by_category.json ef0574a0...f016, collapse_slices_5k.json fe6fb810...813b, TABLE1_dolly.md d3c3fbc9...5f36.
+- **Repo push CONFIRMED at remote HEAD a210111** (git ls-remote: a2101115614b24b79301ab02a56b7a226b91d21f, the 05:26 CST commit). Local dir is not itself a git checkout; ls-remote is authoritative.
+- **HF adapters BOTH LIVE (re-verified this run):** ashishrs/collapsewatch-raw-tinyaya and ashishrs/collapsewatch-gated-tinyaya model cards render. Datasets (raw/gated 5k) live per the Nov 16 00:00 self-verifier correction.
+- **Evals on record (unchanged):** ARC base/raw/gated 0.44/0.45/0.45, HellaSwag 0.48 flat at n=100; deltas inside standard error; honest claim is capability preservation, not improvement. MMLU and safety refusal NOT measured; never claim them. Do NOT re-run the Colab fine-tune.
 
 ## 2026-11-15 Day-15 re-verify (hash compare + Colab check + first-submit feasibility)
 
